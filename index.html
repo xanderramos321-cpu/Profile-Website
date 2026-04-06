@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xander Ramos - Aspiring Music Producer, YouTuber & Musician</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffffff;
+            background-color: #000000;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: 2px solid #ff0000;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffffff;
+            color: #ff0000;
+            box-shadow: 0 6px 12px rgba(255, 0, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+
+        .btn-accent {
+            background-color: #000000;
+            color: #ffffff;
+            border: 2px dashed #ff0000;
+        }
+
+        .btn-accent:hover {
+            background-color: #ff0000;
+            border-style: solid;
+        }
+
+        #header {
+            background-color: #111111;
+            border: 3px solid #ff0000;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        #avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ff0000;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        #header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff0000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        #header p {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #ffffff;
+            margin: 5px 0 0 0;
+            flex: 1;
+        }
+
+        #menu {
+            border-bottom: 2px dashed #ff0000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #menu .btn {
+            margin: 5px;
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        #about {
+            background-color: #111111;
+            border: 1px solid #ff0000;
+            border-style: groove;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #about h2 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8em;
+            color: #ff0000;
+            text-align: center;
+        }
+
+        #about p {
+            text-indent: 2em;
+            color: #ffffff;
+            text-align: justify;
+        }
+
+        #projects {
+            background-color: #111111;
+            border: 2px solid #ff0000;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #projects h2 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8em;
+            color: #ff0000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project-item {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+            background-color: #000000;
+            border-radius: 10px;
+            border: 1px solid #ff0000;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-item h3 {
+            color: #ff0000;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+
+        .project-item p {
+            color: #ffffff;
+            margin: 0 10px 10px 10px;
+            font-size: 0.9em;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #111111;
+            border: 2px dotted #ff0000;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .skill-item {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            padding: 15px;
+            background-color: #000000;
+            border-radius: 5px;
+            border-left: 4px solid #ff0000;
+        }
+
+        .skill-item h3 {
+            font-weight: 600;
+            color: #ff0000;
+            margin-top: 0;
+        }
+
+        .skill-item p {
+            color: #ffffff;
+        }
+
+        .cta-section {
+            background-color: #111111;
+            border: 2px double #ff0000;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .cta-section h2 {
+            color: #ff0000;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+
+        .cta-section p {
+            color: #ffffff;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 20px 0;
+        }
+
+        #social-links {
+            background-color: #111111;
+            border: 2px solid #ff0000;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        #social-links h2 {
+            color: #ff0000;
+        }
+
+        #social-links p {
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background-color: #ffffff;
+            transition: box-shadow 0.3s;
+        }
+
+        .social-icons a:hover {
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+        }
+
+        .social-icons i {
+            font-size: 24px;
+        }
+
+        .fa-github { color: #000000; }
+        .social-icons a:hover .fa-github { color: #333333; }
+        .fa-youtube { color: #ff0000; }
+        .social-icons a:hover .fa-youtube { color: #cc0000; }
+        .fa-tiktok { color: #000000; }
+        .social-icons a:hover .fa-tiktok { color: #333333; }
+
+        footer {
+            border-top: 1px solid #ff0000;
+            padding-top: 20px;
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+
+        #btnTop {
+            display: block;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 4rem;
+            height: 4rem;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: 2px solid #ff0000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 4rem;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        #btnTop:hover {
+            background-color: #ffffff;
+            color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        /* ===== ADDED HOVER ANIMATIONS ===== */
+        .btn, .project-item, .project-item img, .skill-item, .social-icons a, #avatar, #btnTop {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.08);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-5px) rotate(-1deg);
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .project-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        #avatar:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2) translateY(-5px);
+        }
+
+        #header:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        #btnTop:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 0 15px #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+    <div id="header">
+        <img id="avatar" src="Xander.jpg" alt="Xander Profile Avatar">
+        
+        <div class="intro-text">
+            <h1>Xander Ramos</h1>
+            <p>Welcome! I'm an aspiring music producer, YouTuber, and musician passionate about crafting beats, editing videos, and designing sounds that bring ideas to life. Let's connect and create something amazing together.</p>
+        </div>
+    </div>
+
+    <div id="menu">
+        <a href="#about" class="btn btn-secondary">About</a>
+        <a href="#projects" class="btn btn-secondary">My Projects</a>
+        <a href="#skills" class="btn btn-secondary">Skills</a>
+        <a href="#social-links" class="btn btn-secondary">Socials</a>
+        <a href="#cta" class="btn btn-secondary">Get In Touch</a>
+    </div>
+
+    <div id="about">
+        <h2>About Me</h2>
+        <p>I'm a passionate creator in the world of sound and visuals. As an aspiring music producer, YouTuber, and musician, I spend my days crafting beats that resonate and stories that captivate. From the first note to the final edit, my journey is all about turning ideas into immersive experiences. Whether it's producing tracks that pulse with energy or editing videos that tell a compelling narrative, I'm driven by the rhythm of innovation.</p>
+    </div>
+
+    <div id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <img src="picture 1.jpg" alt="Project 1">
+                <h3>2hollis - Poster boy Remake</h3>
+                <p>A remake of popular music by 2hollis.</p>
+            </div>
+            <div class="project-item">
+                <img src="picture 2.avif" alt="Project 2">
+                <h3>My YouTube Intro</h3>
+                <p>An Edit for my YouTube intro using alightmotion.</p>
+            </div>
+            <div class="project-item">
+                <img src="picture 3.avif" alt="Project 3">
+                <h3>Video Montage</h3>
+                <p>Edited Gaming montage for YouTube Videos.</p>
+            </div>
+            <div class="project-item">
+                <img src="picture 4.jpg" alt="Project 4">
+                <h3>Sound Design Pack on how to make Melodic Glo</h3>
+                <p>Custom sounds like supersaw, sine, and square wave to make a unique sounds</p>
+            </div>
+            <div class="project-item">
+                <img src="picture 5.jpg" alt="Project 5">
+                <h3>Music Production Tutorial</h3>
+                <p>A tutorial on how to make a Melodic Glo music.</p>
+            </div>
+            <div class="project-item">
+                <img src="picture 6.jpg" alt="Project 6">
+                <h3>Video Editing with effects</h3>
+                <p>A gameplay that was edited through alightmotion, serving as entertainmet.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills" class="skills-container">
+        <div class="skill-item">
+            <h3>Music Production</h3>
+            <p>Creating original tracks using DAWs like FL Studio, Ableton and Logic Pro, blending genres from electronic to hip-hop.</p>
+        </div>
+        <div class="skill-item">
+            <h3>Video Editing</h3>
+            <p>Mastering Adobe Premiere, Alightmotion and After Effects to produce engaging YouTube content with seamless cuts and effects.</p>
+        </div>
+        <div class="skill-item">
+            <h3>Sound Designing</h3>
+            <p>Designing custom sounds and effects with tools like Serum and Massive, adding depth to music and videos.</p>
+        </div>
+    </div>
+
+    <div id="cta" class="cta-section">
+        <h2>Ready to Collaborate?</h2>
+        <p>Click below to explore my work or reach out!</p>
+        <a href="https://www.youtube.com/watch?v=Y9B0ezbiHAw" target="_blank" class="btn btn-primary">Listen to My Music</a>
+        <a href="https://www.youtube.com/@DardsPH/videos" target="_blank" class="btn btn-primary">Watch My Videos</a>
+        <a href="mailto:xanderramos321@gmail.com" class="btn btn-accent">Contact Me</a>
+        <a href="Resume.html" target="_blank" class="btn btn-secondary">My Resume</a>
+    </div>
+
+    <div id="social-links">
+        <h2>Follow Me</h2>
+        <p>Visit my channels for music, tutorials, and more!</p>
+        <div class="social-icons">
+            <a href="https://github.com/xanderramos321-cpu" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.youtube.com/@DardsPH" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@dardsph" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Xander Ramos. All rights reserved. Let's make some noise together!</p>
+    </footer>
+    <a href="#top" id="btnTop" title="Go to top"><i class="fa fa-arrow-up"></i></a>
+</body>
+</html>
